@@ -147,11 +147,11 @@ export default function AdminEvaluationPage() {
             <CardDescription className="text-xs">Active Model</CardDescription>
             <CardTitle className="text-xl font-bold text-white flex items-center gap-2">
               <Cpu className="h-5 w-5 text-purple-400" />
-              Gemini 1.5 Flash
+              Gemini 2.5 Flash
             </CardTitle>
           </CardHeader>
           <CardContent className="p-4 pt-1 text-[11px] text-muted-foreground">
-            Embeddings: text-embedding-004 (768-D)
+            Embeddings: gemini-embedding-001 (3072-D)
           </CardContent>
         </Card>
 

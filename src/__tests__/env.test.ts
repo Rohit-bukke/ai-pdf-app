@@ -8,8 +8,8 @@ describe("Environment Configuration & Validation", () => {
     GOOGLE_CLIENT_SECRET: z.string().min(1),
     AUTH_SECRET: z.string().min(1),
     GEMINI_API_KEY: z.string().min(1),
-    GEMINI_MODEL: z.string().default("gemini-1.5-flash"),
-    GEMINI_EMBEDDING_MODEL: z.string().default("text-embedding-004"),
+    GEMINI_MODEL: z.string().default("gemini-2.5-flash"),
+    GEMINI_EMBEDDING_MODEL: z.string().default("gemini-embedding-001"),
   });
 
   it("successfully parses valid environment variables", () => {
@@ -24,8 +24,8 @@ describe("Environment Configuration & Validation", () => {
     const parsed = testSchema.safeParse(validEnv);
     expect(parsed.success).toBe(true);
     if (parsed.success) {
-      expect(parsed.data.GEMINI_MODEL).toBe("gemini-1.5-flash");
-      expect(parsed.data.GEMINI_EMBEDDING_MODEL).toBe("text-embedding-004");
+      expect(parsed.data.GEMINI_MODEL).toBe("gemini-2.5-flash");
+      expect(parsed.data.GEMINI_EMBEDDING_MODEL).toBe("gemini-embedding-001");
     }
   });
 

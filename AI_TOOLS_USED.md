@@ -3,13 +3,13 @@
 The following AI models and developer tooling were utilized in building the AI Study Companion:
 
 ## 1. Production Models & APIs
-- **Google Gemini 1.5 Flash (`gemini-1.5-flash`)**:
+- **Google Gemini 2.5 Flash (`gemini-2.5-flash`)**:
   - Grounded RAG question answering with strict citation generation.
   - Adaptive assessment generation with JSON structured outputs validated via Zod.
   - Asynchronous persistent learner context memory distillation.
   - Curriculum concept extraction and prerequisite relationship identification.
-- **Google Gemini Embeddings (`text-embedding-004`)**:
-  - High-density 768-dimensional semantic embeddings for document chunks.
+- **Google Gemini Embeddings (`gemini-embedding-001`)**:
+  - High-density 3072-dimensional semantic embeddings for document chunks.
 
 ## 2. Engineering & Development Tooling
 - **Antigravity AI IDE & Gemini Coding Agent**: End-to-end full-stack pair programming, schema design, and test suite implementation.

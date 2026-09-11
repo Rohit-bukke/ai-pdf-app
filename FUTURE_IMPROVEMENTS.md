@@ -15,4 +15,4 @@ The following enhancements are prioritized for subsequent production iterations:
    - Introduce role-based collaboration allowing multiple students or study groups to share spaces with fine-grained read/write permissions.
 
 5. **Advanced Hybrid Search (RRF)**:
-   - Combine dense vector retrieval (Gemini 768-D) with sparse lexical BM25 retrieval using Reciprocal Rank Fusion for maximum keyword precision on technical domain terms.
+   - Combine dense vector retrieval (Gemini 3072-D) with sparse lexical BM25 retrieval using Reciprocal Rank Fusion for maximum keyword precision on technical domain terms.

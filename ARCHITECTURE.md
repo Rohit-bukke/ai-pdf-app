@@ -46,8 +46,8 @@
 |      v       |       | - materials   |                              +-------------+
 | Google       |       | - chunks      |
 | Gemini API   |       | - concepts    |
-| - 1.5 Flash  |       | - mastery     |
-| - embed-004  |       | - questions   |
+| - 2.5 Flash  |       | - mastery     |
+| - embed-001  |       | - questions   |
 |              |       | - attempts    |
 |              |       | - aiRequestLog|
 +--------------+       +---------------+
@@ -91,7 +91,7 @@
   - `chunkIndex`: Number
   - `pageNumber`: Number
   - `content`: String
-  - `embedding`: Array of 768 Numbers (`text-embedding-004`)
+  - `embedding`: Array of 3072 Numbers (`gemini-embedding-001`)
 - **MongoDB Atlas Vector Search Index Definition**:
   ```json
   {
@@ -99,7 +99,7 @@
       "dynamic": true,
       "fields": {
         "embedding": {
-          "dimensions": 768,
+          "dimensions": 3072,
           "similarity": "cosine",
           "type": "knnVector"
         },

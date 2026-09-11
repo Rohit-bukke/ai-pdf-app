@@ -183,7 +183,7 @@ export default function LandingPage() {
 
             <div className="rounded-xl border border-border bg-background/50 p-4">
               <div className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-1">2. Embeddings</div>
-              <h4 className="text-sm font-semibold text-white mb-2">Gemini 768-D Vectors</h4>
+              <h4 className="text-sm font-semibold text-white mb-2">Gemini 3072-D Vectors</h4>
               <p className="text-xs text-muted-foreground">
                 Batch embedding generation stored in MongoDB Atlas with project-level isolation.
               </p>

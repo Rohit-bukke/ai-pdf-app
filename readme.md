@@ -35,8 +35,8 @@ Unlike generic PDF chatbot wrappers, AI Study Companion incorporates deep AI eng
 | :--- | :--- | :--- |
 | **Frontend** | Next.js 14 (App Router), TypeScript, Tailwind CSS, Lucide Icons | Responsive glassmorphic UI, responsive layouts |
 | **Database** | MongoDB Atlas, Mongoose | Multi-tenant document storage, indexing, aggregation |
-| **Vector Search** | MongoDB Atlas Vector Search | 768-D vector indexing for document chunks |
-| **AI / LLM** | Google Gemini API (`gemini-1.5-flash`, `text-embedding-004`) | Grounded tutoring, question synthesis, embeddings |
+| **Vector Search** | MongoDB Atlas Vector Search | 3072-D vector indexing for document chunks |
+| **AI / LLM** | Google Gemini API (`gemini-2.5-flash`, `gemini-embedding-001`) | Grounded tutoring, question synthesis, embeddings |
 | **AI Abstraction** | Provider Interface (`IAIProvider`) | Decoupled vendor abstraction layer |
 | **Authentication** | Auth.js / NextAuth (Google OAuth) | Secure session management, role-based access |
 | **File Storage** | Supabase Storage (Private Bucket: `pdf-materials`) | PDF storage with magic-byte validation |
@@ -82,6 +82,29 @@ npm run test
 ```bash
 npm run build
 npm run start
+```
+
+### 7. MongoDB Atlas Vector Search Index Configuration
+In your MongoDB Atlas cluster, create a vector search index on the `chunks` collection named `vector_index`:
+```json
+{
+  "fields": [
+    {
+      "type": "vector",
+      "path": "embedding",
+      "numDimensions": 3072,
+      "similarity": "cosine"
+    },
+    {
+      "type": "filter",
+      "path": "projectId"
+    },
+    {
+      "type": "filter",
+      "path": "userId"
+    }
+  ]
+}
 ```
 
 ---
