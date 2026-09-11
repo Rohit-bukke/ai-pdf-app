@@ -20,7 +20,7 @@ const envSchema = z.object({
 
   // AI Configuration
   GEMINI_API_KEY: z.string().min(1, "GEMINI_API_KEY is required"),
-  GEMINI_MODEL: z.string().default("gemini-2.5-flash"),
+  GEMINI_MODEL: z.string().default("gemini-3.6-flash"),
   GEMINI_EMBEDDING_MODEL: z.string().default("gemini-embedding-001"),
 
   // Observability
@@ -67,7 +67,7 @@ function validateEnv(): Env {
         SUPABASE_URL: process.env.SUPABASE_URL || "",
         SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY || "",
         GEMINI_API_KEY: process.env.GEMINI_API_KEY || "build-stub-gemini-key",
-        GEMINI_MODEL: process.env.GEMINI_MODEL || "gemini-2.5-flash",
+        GEMINI_MODEL: process.env.GEMINI_MODEL || "gemini-3.6-flash",
         GEMINI_EMBEDDING_MODEL: process.env.GEMINI_EMBEDDING_MODEL || "gemini-embedding-001",
         SENTRY_DSN: process.env.SENTRY_DSN || "",
         INNGEST_EVENT_KEY: process.env.INNGEST_EVENT_KEY || "",
@@ -94,7 +94,7 @@ function validateEnv(): Env {
         SUPABASE_URL: process.env.SUPABASE_URL || "",
         SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY || "",
         GEMINI_API_KEY: process.env.GEMINI_API_KEY || "dev-gemini-key",
-        GEMINI_MODEL: process.env.GEMINI_MODEL || "gemini-2.5-flash",
+        GEMINI_MODEL: process.env.GEMINI_MODEL || "gemini-3.6-flash",
         GEMINI_EMBEDDING_MODEL: process.env.GEMINI_EMBEDDING_MODEL || "gemini-embedding-001",
         SENTRY_DSN: process.env.SENTRY_DSN || "",
         INNGEST_EVENT_KEY: process.env.INNGEST_EVENT_KEY || "",
