@@ -60,31 +60,11 @@ export async function POST(req: NextRequest) {
     });
 
     // 6. Asynchronously trigger processing
-    // If Inngest is configured, send event; also run local processor asynchronously
     try {
-      if (process.env.INNGEST_EVENT_KEY) {
-        await inngest.send({
-          name: "material/uploaded",
-          data: {
-            materialId: material._id.toString(),
-            base64Buffer: buffer.toString("base64"),
-          },
-        });
-      } else {
-        // Run asynchronously without blocking HTTP response
-        setImmediate(() => {
-          processPdfDocument(material._id.toString(), buffer).catch((err) => {
-            console.error("[Async PDF Pipeline Error]:", err);
-          });
-        });
-      }
-    } catch (inngestErr) {
-      // Fallback local async processing
-      setImmediate(() => {
-        processPdfDocument(material._id.toString(), buffer).catch((err) => {
-          console.error("[Async PDF Pipeline Error]:", err);
-        });
-      });
+      await processPdfDocument(material._id.toString(), buffer);
+    } catch (processingError) {
+      console.error("[PDF Processing Error]:", processingError);
+      throw processingError;
     }
 
     return NextResponse.json(

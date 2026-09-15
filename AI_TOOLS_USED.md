@@ -16,3 +16,4 @@ The following AI models and developer tooling were utilized in building the AI S
 - **Zod**: Runtime type validation ensuring LLM outputs strictly adhere to application schemas.
 - **Mongoose / MongoDB Atlas Vector Search**: Vector storage, KNN similarity matching, and analytics aggregations.
 - **Vitest**: Automated test execution for isolation, PDF validation, and calibration algorithms.
+   
